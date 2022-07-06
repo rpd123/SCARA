@@ -18,7 +18,7 @@ M8 bolt 40mm 1x +nut 1x
 GT2 pulley 20 teeth 5mm bore  2x  
 GT2 belt 400mm 160 teeth, 6mm 1x  
 GT2 belt 160mm 80 teeth, 6mm 2x  
-T8 x 8 leads screw +nut 1x  
+T8 x 8 lead screw +nut 1x  
 coupling 5 to 8 1x
 
 Examples of some of the above:
