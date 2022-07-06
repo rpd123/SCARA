@@ -19,4 +19,4 @@ GT2 pulley 20 teeth 2x
 GT2 belt 400mm 160 teeth 1x
 GT2 belt 160mm 80 teeth 2x
 T8 threaded rod +nut 1x
-coupling 5 to 8 1x
+coupling 5 to 8 1x 
