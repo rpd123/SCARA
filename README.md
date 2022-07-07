@@ -12,13 +12,13 @@ LM8UU bearing 4x
 8x22x7 608-ZZ bearing 2x  
 15x32x9 6002-ZZ bearing 3x  
 Linear bearing rod 8mm 3x  
-M3 bolt 8mm 8x for two motors
+M3 bolt 8mm 8x for two motors  
 M3 bolt 8mm 2x for top motor
 M3 bolt 30mm 2x +nut 2x  
 M8 bolt 40mm 1x +nut 1x  
 GT2 pulley 20 teeth 5mm bore  2x  
 GT2 belt 400mm 200 teeth, 6mm 1x  
-GT2 belt 160mm 80 teeth, 6mm 2x [original spec] I needed 162 mm  
+GT2 belt 160mm 80 teeth, 6mm 2x [original spec] I needed 162 mm    
 T8 x 8 lead screw +nut 1x  
 coupling 5 to 8 1x
 
