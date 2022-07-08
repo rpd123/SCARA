@@ -1,4 +1,6 @@
 # SCARA
+
+Python code is at https://github.com/rpd123/chess-robot
  
 For the chess robot you only need the LONG versions of arm-1 and arm-2
   
