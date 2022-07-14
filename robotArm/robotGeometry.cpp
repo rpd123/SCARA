@@ -68,28 +68,29 @@ void RobotGeometry::calculateGrad() {
       
       low = atan(xmm / ymm) - atan((L2 * sin(high)) / (L1 + L2 * cos(high)));
       
-      high = (-1) * high * 180 / PI;
-      low = low * 180 / PI;
+     // high = (-1) * high * 180 / PI;
+      high = (-1) * high;
+      //low = low * 180 / PI;
 
      // Angles adjustment depending in which quadrant the final tool coordinate x,y is
       if (xmm >= 0 & ymm >= 0) {       // 1st quadrant
-        low = 90 - low;
+        low = (PI / 2.0) - low;
       }
       if (xmm < 0 & ymm > 0) {       // 2nd quadrant
-        low = 90 - low;
+        low = (PI / 2.0) - low;
       }
       if (xmm < 0 & ymm < 0) {       // 3d quadrant
-        low = 270 - low;
+        low = (PI * 1.5) - low;
       }
       if (xmm > 0 & ymm < 0) {       // 4th quadrant
-        low = -90 - low;
+        low = -(PI / 2.0) - low;
       }
       if (xmm < 0 & ymm == 0) {
-        low = 270 + low;
+        low = (PI * 1.5) + low;
       }
-      low=round(low);
-      high=round(high);
-
-      rot = round(360 * zmm / LEAD);   // height
+      //low=round(low);  //rounding radians would be mad!
+      //high=round(high);
+      //SERIALX.println("L" + String(low));
+      rot = round((PI * 2) * zmm / LEAD);   // height in radians
   }
 }

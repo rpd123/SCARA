@@ -61,12 +61,12 @@ void RampsStepper::stepRelativeRad(float rad) {
   stepRelative(rad * radToStepFactor);
 }
 
-void RampsStepper::update() {   
+void RampsStepper::update(int aDelay) {   
   while (stepperStepTargetPosition < stepperStepPosition) {  
     digitalWrite(dirPin, !inverse);
     delayMicroseconds(10);
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(40);
+    delayMicroseconds(aDelay);
     digitalWrite(stepPin, LOW);
     delayMicroseconds(10);
     stepperStepPosition--;
@@ -75,7 +75,7 @@ void RampsStepper::update() {
     digitalWrite(dirPin, inverse);
     delayMicroseconds(10);
     digitalWrite(stepPin, HIGH);
-    delayMicroseconds(40);
+    delayMicroseconds(aDelay);
     digitalWrite(stepPin, LOW);
     delayMicroseconds(10);
     stepperStepPosition++;

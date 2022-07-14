@@ -19,7 +19,7 @@ public:
   void stepToPositionRad(float rad);
   void stepRelativeRad(float rad);
   
-  void update();
+  void update(int aDelay=40);
   
   void setReductionRatio(float gearRatio, int stepsPerRev);
 private:

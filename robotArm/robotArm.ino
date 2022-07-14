@@ -84,8 +84,8 @@ void setup() {
   stepperExtruder.setReductionRatio(32.0 / 9.0, 200 * 16);
 
   if (SCARA) {
-      stepperHigher.setReductionRatio(60.0 / 20.0, 200 * 16);  //big gear: 32, small gear: 9, steps per rev: 200, microsteps: 16
-      stepperLower.setReductionRatio( 60.0 / 20.0, 200 * 16);
+      stepperHigher.setReductionRatio(62.0 / 20.0, 200 * 16);  
+      stepperLower.setReductionRatio( 62.0 / 20.0, 200 * 16);
       stepperRotate.setReductionRatio(1.0, 200 * 16);
   }
 
@@ -96,7 +96,7 @@ void setup() {
   stepperExtruder.setPositionRad(0);
 
  if (SCARA) {
-      stepperHigher.setPositionRad(0);          // 0°
+      stepperHigher.setPositionRad(-PI / 2.0);          // -90°
       stepperLower.setPositionRad(PI / 2.0);  //90°
       stepperRotate.setPositionRad(0);         // 0°
  }
@@ -142,13 +142,14 @@ void loop () {
   //update and Calculate all Positions, Geometry and Drive all Motors...
   interpolator.updateActualPosition();
   geometry.set(interpolator.getXPosmm(), interpolator.getYPosmm(), interpolator.getZPosmm());
+  //Logger::logDEBUG(String(geometry.getLowRad()) + " " + String(geometry.getHighRad()) + " " + String(geometry.getRotRad()));
   stepperRotate.stepToPositionRad(geometry.getRotRad());
   stepperLower.stepToPositionRad (geometry.getLowRad());
   stepperHigher.stepToPositionRad(geometry.getHighRad());
   stepperExtruder.stepToPositionRad(interpolator.getEPosmm());
   stepperRotate.update();
-  stepperLower.update();
-  stepperHigher.update();
+  stepperLower.update(STEPPERDELAY);
+  stepperHigher.update(STEPPERDELAY);
   fan.update();
 
   if (!queue.isFull()) {
