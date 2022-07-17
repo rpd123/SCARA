@@ -72,18 +72,18 @@ void RobotGeometry::calculateGrad() {
         dist = (L1+L2)-0.001f;
         SERIALX.println("IK overflow->limit");
       }
-      //bool elbow = 1; // elbow is static
-      //SERIALX.println("elbow="+String(elbow));
+      //bool elbow = 1; // elbow is initially static and = 1
+      
       if (xmm > 0 & ymm < 95) {
         elbow = 0;
       }
       if (xmm > 130) {   // parked
-        elbow = 0;
+        elbow = 1;
       }
       if (xmm < 0 & ymm < 95) {
         elbow = 1;
       }
-      //SERIALX.println("elbow="+String(elbow));
+      
       if (elbow==1)  // inverse elbow solution: reverse X axis, and final angles.
         xmm = -xmm;
          
