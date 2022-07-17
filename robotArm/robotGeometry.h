@@ -11,6 +11,7 @@ public:
   float getRotRad() const;
   float getLowRad() const;
   float getHighRad() const;
+  static bool elbow;
 private:
   void calculateGrad();
   float xmm;
@@ -22,4 +23,3 @@ private:
 };
 
 #endif
-

@@ -3,6 +3,12 @@
 #include <math.h>
 #include <Arduino.h>
 
+float lawOfCosines(float a, float b, float c) 
+{
+  return acosf((a*a + b*b - c*c) / (2.0f * a * b));
+}
+
+bool RobotGeometry::elbow = 1;
 RobotGeometry::RobotGeometry() {
 
 }
@@ -59,37 +65,54 @@ void RobotGeometry::calculateGrad() {
       //correct higher Angle as it is mechanically bounded width lower Motor
       high = high + low;
   }else{
-      // modified from howtomechatronics.com/projects/scara-robot-how-to-build-your-own-arduino-based-robot/
-      
-      high = acos((sq(xmm) + sq(ymm) - sq(L1) - sq(L2)) / (2 * L1 * L2));
-      if (xmm < 0 & ymm < 0) {
-        high = (-1) * high;
+      // 
+      float dist = sqrt(xmm*xmm +ymm*ymm);
+      float D1,D2;
+      if (dist > (L1+L2)){
+        dist = (L1+L2)-0.001f;
+        SERIALX.println("IK overflow->limit");
       }
-      
-      low = atan(xmm / ymm) - atan((L2 * sin(high)) / (L1 + L2 * cos(high)));
-      
-     // high = (-1) * high * 180 / PI;
-      high = (-1) * high;
-      //low = low * 180 / PI;
-
+      //bool elbow = 1; // elbow is static
+      //SERIALX.println("elbow="+String(elbow));
+      if (xmm > 0 & ymm < 95) {
+        elbow = 0;
+      }
+      if (xmm > 130) {   // parked
+        elbow = 0;
+      }
+      if (xmm < 0 & ymm < 95) {
+        elbow = 1;
+      }
+      //SERIALX.println("elbow="+String(elbow));
+      if (elbow==1)  // inverse elbow solution: reverse X axis, and final angles.
+        xmm = -xmm;
+         
+      D1 = atan2(ymm,xmm); 
+      D2 = lawOfCosines(dist, L1, L2);   
+      low = D1 + D2 -(PI / 2.0);
+      high = lawOfCosines(L1,L2,dist) - PI;  
+      if (elbow==1){
+        low = -low;
+        high = -high;
+      }
+      high = high + low;    //aha!
      // Angles adjustment depending in which quadrant the final tool coordinate x,y is
       if (xmm >= 0 & ymm >= 0) {       // 1st quadrant
-        low = (PI / 2.0) - low;
+        //low = (PI / 2.0) - low;
       }
       if (xmm < 0 & ymm > 0) {       // 2nd quadrant
-        low = (PI / 2.0) - low;
+        //low = (PI / 2.0) - low;
       }
       if (xmm < 0 & ymm < 0) {       // 3d quadrant
-        low = (PI * 1.5) - low;
+        //low = (PI * 1.5) - low;
       }
       if (xmm > 0 & ymm < 0) {       // 4th quadrant
-        low = -(PI / 2.0) - low;
+        //low = -(PI / 2.0) - low;
       }
       if (xmm < 0 & ymm == 0) {
-        low = (PI * 1.5) + low;
+        //low = (PI * 1.5) + low;
       }
-      //low=round(low);  //rounding radians would be mad!
-      //high=round(high);
+
       //SERIALX.println("L" + String(low));
       rot = round((PI * 2) * zmm / LEAD);   // height in radians
   }
