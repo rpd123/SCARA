@@ -34,7 +34,7 @@ Command command;
 
 Servo servo;
 //int angle = 170;
-int angle = 50;
+int angle = 45;
 int angle_offset = 0; // offset to compensate deviation from 90 degree(middle position)
 // which should gripper should be full closed.
 
@@ -78,15 +78,19 @@ void setup() {
   //servo.slowmove (angle + angle_offset, 50);
 
   //reduction of steppers..
-  stepperHigher.setReductionRatio(32.0 / 9.0, 200 * 16);  //big gear: 32, small gear: 9, steps per rev: 200, microsteps: 16
-  stepperLower.setReductionRatio( 32.0 / 9.0, 200 * 16);
-  stepperRotate.setReductionRatio(32.0 / 9.0, 200 * 16);
-  stepperExtruder.setReductionRatio(32.0 / 9.0, 200 * 16);
 
   if (SCARA) {
-      stepperHigher.setReductionRatio(62.0 / 20.0, 200 * 16);  
-      stepperLower.setReductionRatio( 62.0 / 20.0, 200 * 16);
+      //SERIALX.println("here");
+      //stepperHigher.setReductionRatio(62.0 / 20.0, 200 * 16);
+      stepperHigher.setReductionRatio((62.0 / 16.0) * (62.0 / 33.0), 200 * 16);   
+      //stepperLower.setReductionRatio( 62.0 / 20.0, 200 * 16);
+      stepperLower.setReductionRatio( 72.0 / 16.0, 200 * 16);
       stepperRotate.setReductionRatio(1.0, 200 * 16);
+  } else{
+      stepperHigher.setReductionRatio(32.0 / 9.0, 200 * 16);  //big gear: 32, small gear: 9, steps per rev: 200, microsteps: 16
+      stepperLower.setReductionRatio( 32.0 / 9.0, 200 * 16);
+      stepperRotate.setReductionRatio(32.0 / 9.0, 200 * 16);
+      stepperExtruder.setReductionRatio(32.0 / 9.0, 200 * 16);    
   }
 
   //start positions..
@@ -96,7 +100,8 @@ void setup() {
   stepperExtruder.setPositionRad(0);
 
  if (SCARA) {
-      stepperHigher.setPositionRad(-PI / 2.0);          // -90°
+      //stepperHigher.setPositionRad(-PI / 2.0);          // -90°
+      stepperHigher.setPositionRad(0);
       stepperLower.setPositionRad(PI / 2.0);  //90°
       stepperRotate.setPositionRad(0);         // 0°
  }

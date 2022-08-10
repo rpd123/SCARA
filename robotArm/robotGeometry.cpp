@@ -8,7 +8,7 @@ float lawOfCosines(float a, float b, float c)
   return acosf((a*a + b*b - c*c) / (2.0f * a * b));
 }
 
-bool RobotGeometry::elbow = 1;
+bool RobotGeometry::elbow = 0;
 RobotGeometry::RobotGeometry() {
 
 }
@@ -72,15 +72,15 @@ void RobotGeometry::calculateGrad() {
         dist = (L1+L2)-0.001f;
         SERIALX.println("IK overflow->limit");
       }
-      //bool elbow = 1; // elbow is initially static and = 1
+      //bool elbow = 0; // elbow is initially static and = 0
       
-      if (xmm > 0 & ymm < 95) {
+      if (xmm > 0 && ymm < (L1+L2)) {
         elbow = 0;
       }
-      if (xmm > 130) {   // parked
-        elbow = 1;
+      if (xmm > 135) {   // parked
+        elbow = 0;
       }
-      if (xmm < 0 & ymm < 95) {
+      if (xmm < 0 && ymm < (L1+L2)) {
         elbow = 1;
       }
       
@@ -95,7 +95,8 @@ void RobotGeometry::calculateGrad() {
         low = -low;
         high = -high;
       }
-      high = high + low;    //aha!
+      float highgearing = 33.0/62.0;
+      high = high + (highgearing * low);    //aha!
      // Angles adjustment depending in which quadrant the final tool coordinate x,y is
       if (xmm >= 0 & ymm >= 0) {       // 1st quadrant
         //low = (PI / 2.0) - low;
@@ -113,7 +114,6 @@ void RobotGeometry::calculateGrad() {
         //low = (PI * 1.5) + low;
       }
 
-      //SERIALX.println("L" + String(low));
       rot = round((PI * 2) * zmm / LEAD);   // height in radians
   }
 }
