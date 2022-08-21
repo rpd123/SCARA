@@ -12,3 +12,4 @@ Also the cylinder has a screw right through from top to bottom, and  locknut on 
 The 4 bearings at the end of ARM_BOTTOM are redundant in this modofocation.  
   
 Note: this modification is for playing chess, where the load is very light.  
+This modification allows shank2 to turn right back against shank1, and so allows the robot to stand next to the chessboard and reach near and far squares.  
