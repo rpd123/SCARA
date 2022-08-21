@@ -3,6 +3,12 @@
 Python code is at https://github.com/rpd123/chess-robot  
    
 This is for a modified version of pyBot. See original at:  
-https://www.jjrobots.com/scara-robotic-arm-assembly-guide/
-
-
+https://www.jjrobots.com/scara-robotic-arm-assembly-guide/  
+  
+We have the pyBot stlfiles here. The chnge from the original is to have a longer upper shank1 and a replaced shank2.  
+Shank2 is to be screwed into the bottom of the end cylinder of shank1.  
+You will need to drill some holes.    
+Also the cylinder has a screw right through from top to bottom, and  locknut on the end.  
+The 4 bearings at the end of ARM_BOTTOM are redundant in this modofocation.  
+  
+Note: this modification is for playing chess, where the load is very light.  
