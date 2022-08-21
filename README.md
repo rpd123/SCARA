@@ -1,40 +1,18 @@
-# SCARA
-
-Python code is at https://github.com/rpd123/chess-robot
- 
-For the chess robot you only need the LONG versions of arm-1 and arm-2
+# SCARA  
   
-You need 2 x spacer.stl
-
-Parts
-
-NEMA 17 stepper motor 3x
-
-LM8UU bearing 4x  
-8x22x7 608-ZZ bearing 2x  
-15x32x9 6002-ZZ bearing 3x  
-Linear bearing rod 8mm 3x  
-M3 bolt 8mm 8x for two motors  
-M3 bolt 8mm 2x for top motor  
-M3 bolt 30mm 2x +nut 2x  
-M8 bolt 40mm 1x +nut 1x  
-GT2 pulley 20 teeth 5mm bore  2x  
-GT2 belt 400mm 200 teeth, 6mm 1x  
-GT2 belt 160mm 80 teeth, 6mm 2x [original spec] I needed 162 mm    
-T8 x 8 lead screw +nut 1x  
-coupling 5 to 8 1x
-
-Examples of some of the above:
-
-Linear bearing rod 8mm 3x  
-https://www.ebay.com/itm/284132709444
-
-GT2 pulley 20 teeth, 5mm bore 2x  
-https://www.amazon.co.uk/dp/B098JBFMGL/ref=pe_27063361_487055811_TE_dp_2
+Arduino code is in the robotArm folder.  
+Python code is at https://github.com/rpd123/chess-robot  
   
-T8 x 8 lead screw +nut 1x  
-https://www.ebay.com/itm/333736944160
-  
-coupling 5 to 8 1x  
-https://www.amazon.co.uk/dp/B091397QGB/ref=pe_27063361_487055811_TE_dp_1
 
+   
+This is for a modified version of pyBot. See original at:  
+https://www.jjrobots.com/scara-robotic-arm-assembly-guide/  
+  
+We have the pyBot stlfiles here. The chnge from the original is to have a longer upper shank1 and a replaced shank2.  
+Shank2 is to be screwed into the bottom of the end cylinder of shank1.  
+You will need to drill some holes.    
+Also the cylinder has a screw right through from top to bottom, and  locknut on the end.  
+The 4 bearings at the end of ARM_BOTTOM are redundant in this modofocation.  
+  
+Note: this modification is for playing chess, where the load is very light.  
+This modification allows shank2 to turn right back against shank1, and so allows the robot to stand next to the chessboard and reach near and far squares.  
