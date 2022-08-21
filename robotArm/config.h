@@ -13,7 +13,7 @@
 #define END_EFFECTOR_OFFSET 0.0 // LENGTH FROM UPPER SHANK BEARING TO MIDPOINT OF END EFFECTOR IN MM. Not 54
 
 //SCARA SETTINGS
-#define SCARA false
+#define SCARA true
 #define L1 153.5  // shank1 length
 #define L2 (129.5 + 30.0)  // shank length + gripperoffset
 #define LEAD 8.0
