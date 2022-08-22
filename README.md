@@ -14,7 +14,7 @@ We have the pyBot stlfiles here. The change from the original is to have a longe
 Shank2 is to be screwed into the bottom of the end cylinder of shank1.  
 You will need to drill some holes.    
 Also the cylinder has a screw right through from top to bottom, and  locknut on the end.  
-The bearing at the end of ARM_BOTTOM is redundant in this modofocation.  
+The bearing at the end of ARM_BOTTOM is redundant in this modification.  
   
 Note: this modification is for playing chess, where the load is very light.  
 This modification allows shank2 to turn right back against shank1, and so allows the robot to stand next to the chessboard and reach near and far squares.  
