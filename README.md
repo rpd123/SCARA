@@ -16,5 +16,7 @@ You will need to drill some holes.
 Also the cylinder has a screw right through from top to bottom, and  locknut on the end.  
 The bearing at the end of ARM_BOTTOM is redundant in this modification.  
   
+The longer shank1 requires a 400mm belt.  
+    
 Note: this modification is for playing chess, where the load is very light.  
 This modification allows shank2 to turn right back against shank1, and so allows the robot to stand next to the chessboard and reach near and far squares.  
