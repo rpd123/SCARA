@@ -15,7 +15,7 @@
 //SCARA SETTINGS
 #define SCARA true
 #define L1 153.5  // shank1 length
-#define L2 (129.5 + 30.0)  // shank length + gripperoffset
+#define L2 155.5  // shank length + gripperoffset
 #define LEAD 8.0
 
 //INITIAL INTERPOLATION SETTINGS
