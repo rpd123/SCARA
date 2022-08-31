@@ -114,6 +114,6 @@ void RobotGeometry::calculateGrad() {
         //low = (PI * 1.5) + low;
       }
 
-      rot = round((PI * 2) * zmm / LEAD);   // height in radians
+      rot = (PI * 2) * zmm / LEAD;   // height in radians
   }
 }

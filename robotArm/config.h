@@ -14,9 +14,10 @@
 
 //SCARA SETTINGS
 #define SCARA true
-#define L1 153.5  // shank1 length
-#define L2 160.5  // shank length + gripperoffset
+#define L1 153.0  // shank1 length
+#define L2 161.0  // shank2 length + gripperoffset
 #define LEAD 8.0
+#define GRIPPERFLOATHEIGHT 20.0  // mm
 
 //INITIAL INTERPOLATION SETTINGS
 #if SCARA
@@ -24,7 +25,8 @@
 //  #define INITIAL_Y L2 // CARTESIAN COORDINATE Y
   #define INITIAL_X (L1 + L2) // CARTESIAN COORDINATE X  
   #define INITIAL_Y 0.0 // CARTESIAN COORDINATE Y
-  #define INITIAL_Z 0.0 // CARTESIAN COORDINATE Z
+//  #define INITIAL_Z 0.0 // CARTESIAN COORDINATE Z
+  #define INITIAL_Z GRIPPERFLOATHEIGHT // CARTESIAN COORDINATE Z
   #define STEPPERDELAY 40
 #else
     //  INITIAL_XYZ FORMS VERTICAL LOWER ARM & HORIZONTAL UPPER ARM IN 90 DEGREES

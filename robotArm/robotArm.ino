@@ -103,7 +103,8 @@ void setup() {
       //stepperHigher.setPositionRad(-PI / 2.0);          // -90°
       stepperHigher.setPositionRad(0);
       stepperLower.setPositionRad(PI / 2.0);  //90°
-      stepperRotate.setPositionRad(0);         // 0°
+      //stepperRotate.setPositionRad(0);         // 0°
+      stepperRotate.setPositionRad((PI * 2) * GRIPPERFLOATHEIGHT / LEAD);         
  }
   //enable and init..
   setStepperEnable(false);
