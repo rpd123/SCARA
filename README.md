@@ -12,7 +12,7 @@ https://www.jjrobots.com/scara-robotic-arm-assembly-guide/
   
 We have the pyBot stlfiles here. The change from the original is to have a longer shank1 top piece and a replaced shank2 (as well as a different gripper).  
       
-Drill through the hub and have a longer screw  
+Drill through the hub and use a longer screw  
     
 The longer shank1 requires a 400mm belt.  
     
