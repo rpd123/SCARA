@@ -10,7 +10,7 @@ manipulator.stl is not required
 This is for a modified version of pyBot. See original at:  
 https://www.jjrobots.com/scara-robotic-arm-assembly-guide/  
   
-We have the pyBot stlfiles here. The change from the original is to have a longer shank1 top piece and a replaced shank2 (as well as a different gripper).  
+We have the pyBot stlfiles here. The change from the original is to have a longer shank1 and a replaced shank2 (as well as a different gripper).  
       
 Drill through the hub and use a longer screw  
     
