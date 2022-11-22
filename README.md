@@ -1,5 +1,7 @@
 # SCARA  
   
+Instructable: https://create.arduino.cc/projecthub/ricpd/scara-chess-robot-a45793  
+    
 Arduino code is in the robotArm folder.  
 Python code is at https://github.com/rpd123/chess-robot  
   
