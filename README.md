@@ -1,5 +1,7 @@
 # SCARA  
   
+Instructable: https://create.arduino.cc/projecthub/ricpd/scara-chess-robot-a45793  
+    
 Arduino code is in the robotArm folder.  
 Python code is at https://github.com/rpd123/chess-robot  
   
@@ -10,11 +12,9 @@ manipulator.stl is not required
 This is for a modified version of pyBot. See original at:  
 https://www.jjrobots.com/scara-robotic-arm-assembly-guide/  
   
-We have the pyBot stlfiles here. The change from the original is to have a longer shank1 top piece and a replaced shank2 (as well as a different gripper).  
-Shank2 is to be screwed into the bottom of the end cylinder of shank1.  
-    
-You will need to drill some holes.    
-Also the cylinder has a screw right through from top to bottom, and  locknut on the end.  
+We have the pyBot stlfiles here. The change from the original is to have a longer shank1 and a replaced shank2 (as well as a different gripper).  
+      
+Drill through the hub and use a longer screw  
     
 The longer shank1 requires a 400mm belt.  
     
