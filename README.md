@@ -10,7 +10,7 @@ https://www.thingiverse.com/thing:4394894/files
 manipulator.stl is not required
    
 This is for a modified version of pyBot. See original at:  
-https://www.jjrobots.com/scara-robotic-arm-assembly-guide/  
+https://www.instructables.com/Pybot-Python-3D-Printed-Robotic-Arm/ 
   
 We have the pyBot stlfiles here. The change from the original is to have a longer shank1 and a replaced shank2 (as well as a different gripper).  
       
